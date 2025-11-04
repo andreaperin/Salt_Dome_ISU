@@ -1,0 +1,43 @@
+--- smokerV3TC2-old.f	2023-07-07 16:22:26
++++ smokerV3TC2.f	2023-07-11 16:32:55
+@@ -192,7 +192,8 @@
+       character*80 ktitle1,ktitle2
+       dimension xi(8),yi(8),ag(9),hag(9)
+       dimension itim(3),pt(5)
+-      dimension se(8,8),pe(8,8),inl(8),kb1(7),kb2(7),kb3(7)
++      ! TODO Missing kb4 definition
++      dimension se(8,8),pe(8,8),inl(8),kb1(7),kb2(7),kb3(7),kb4(7)
+       dimension knox(5),knoy(5),knoz(5)
+       logical lunsat,lplot,lflow,l3dplt,lmom,lmom2,lplot43,lplot49
+       logical lwtc,leak1,leak2,leak3,lss,update_flow
+@@ -291,8 +292,8 @@
+ c     dimension ix1sat(mxs),ix2sat(mxs),surfminsat(mxs),ampsat(mxs),
+ c    +          phasesat(mxs),cutoffsat(mxs)
+ c
+-c      
+-      integer  in(maxne,8),in2(maxne,8),ivt(maxnn)
++!     TODO missing in4 definition
++      integer  in(maxne,8),in2(maxne,8),in4(maxne,8),ivt(maxnn)
+ c
+ c     array of size nf
+ c     ----------------
+@@ -1290,7 +1291,8 @@
+       endif
+ 
+       read(64,10,err=1137) title1,title2,title3
+-      read(64,*,err=1137) ((dum1,dum2,fap(i),dum3,dum4),i=1,neplane2d)
++      ! TODO Wrong pharentesis 
++      read(64,*,err=1137) (dum1,dum2,fap(i),dum3,dum4,i=1,neplane2d)
+       close(64)
+ 
+       do i=1,neplane2d
+@@ -1441,7 +1443,8 @@
+  8166 format(/10x,'element indices ix1-ix2,iy1-iy2,iz1-iz2 :',6i5)
+       write(6,8167) ckx,cky,ckz,tcx,cps,ps0,theta,satw,
+      +                      depc1,depd1,vexp1,smax0,rhob0,pp0,qq0
+- 8167 format(/10x,6i5,/25x,3(e10.3,3x),10f11.3,2f6.1)
++! TODO Wrong format 6i5 as second element
++ 8167 format(/10x,/10x,/25x,3(e10.3,3x),10f11.3,2f6.1)
+ c
+       if(i1*i2*j1*j2*k1*k2.le.0) then
+       write(6,8309)

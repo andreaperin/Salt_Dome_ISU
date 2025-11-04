@@ -1,0 +1,109 @@
+☺THERMAL HEAT FLOW MODEL: (Flow/heat/mass)
+150x1x50 TOTAL TRANSPORT NODES (151x2x51ELEMENTS) 2D cross-section
+June 2021
+1  0  0  0  0  0  1  4  0  0  0  1  0  0  0	;KPRT,KCN,KWT,KINT,KINTV,KGO,ksat,kmass,ktair,krk,kdz,ksubtr,kr1top,kfreec,krfrac
+    1    1    1                       		;ngx,ngy,ngz
+900.						;xlim
+1.						;ylim
+300.						;zlim
+60						;nlx
+1						;nly
+30						;nlz
+    0       0.      0.0           		;nwtl,datum,gamma
+10 1 11 11 -1					;btc points (elements X Y Z1 Z2, +1 continue, -1 end)
+0 0 0 0 0 0 1 1 0.000 -1			;fracture (elements X1 X2 Y1 Y2 Z1 Z2, 1 or 2 D fracture, fracture gepmetry 1-6 P115, fracture aperture, P32)
+0  0   0   0   0    1     0			;B.C.'S (FLOW)
+1  1  1  2  10.19370  +1
+2  2  1  2  10.02380  +1
+3  3  1  2  9.85391  +1
+4  4  1  2  9.68402  +1
+5  5  1  2  9.51412  +1
+6  6  1  2  9.34422  +1
+7  7  1  2  9.17433  +1
+8  8  1  2  9.00444  +1
+9  9  1  2  8.83454  +1
+10  10  1  2  8.66465  +1
+11  11  1  2  8.49475  +1
+12  12  1  2  8.32485  +1
+13  13  1  2  8.15496  +1
+14  14  1  2  7.98506  +1
+15  15  1  2  7.81517  +1
+16  16  1  2  7.64527  +1
+17  17  1  2  7.47538  +1
+18  18  1  2  7.30548  +1
+19  19  1  2  7.13559  +1
+20  20  1  2  6.96570  +1
+21  21  1  2  6.79580  +1
+22  22  1  2  6.62590  +1
+23  23  1  2  6.45601  +1
+24  24  1  2  6.28612  +1
+25  25  1  2  6.11622  +1
+26  26  1  2  5.94632  +1
+27  27  1  2  5.77643  +1
+28  28  1  2  5.60654  +1
+29  29  1  2  5.43664  +1
+30  30  1  2  5.26674  +1
+31  31  1  2  5.09685  +1
+32  32  1  2  4.92695  +1
+33  33  1  2  4.75706  +1
+34  34  1  2  4.58717  +1
+35  35  1  2  4.41727  +1
+36  36  1  2  4.24737  +1
+37  37  1  2  4.07748  +1
+38  38  1  2  3.90759  +1
+39  39  1  2  3.73769  +1
+40  40  1  2  3.56779  +1
+41  41  1  2  3.39790  +1
+42  42  1  2  3.22801  +1
+43  43  1  2  3.05811  +1
+44  44  1  2  2.88821  +1
+45  45  1  2  2.71832  +1
+46  46  1  2  2.54842  +1
+47  47  1  2  2.37853  +1
+48  48  1  2  2.20863  +1
+49  49  1  2  2.03874  +1
+50  50  1  2  1.86885  +1
+51  51  1  2  1.69895  +1
+52  52  1  2  1.52905  +1
+53  53  1  2  1.35916  +1
+54  54  1  2  1.18927  +1
+55  55  1  2  1.01937  +1
+56  56  1  2  0.84947  +1
+57  57  1  2  0.67958  +1
+58  58  1  2  0.50969  +1
+59  59  1  2  0.33979  +1
+60  60  1  2  0.16989  +1
+61  61  1  2  0  -1
+1  1800   {{{ :KX }}}  {{{ :KY }}}  {{{ :KZ}}}  2.0   800. 2630. 0.2  1.0 0.0  0.0 0.0   999999.000   {{{ :porosity }}}  2.0      -1   ;elements, KX,KY,KZ (m/s),thermal K solids, cm,pm,porosity,sat
+0 0  0  0  0 0 9.81E-7  9.81E-7  9.81E-7  2.0   800. 2630. 0.2   1.0 0.0  0.0 0.0   999999.000   0.2  2.0     -1     ;Sable grossier 
+{{{ :specific_storage }}}                                        	;SS
+0  5.						;INIT,H0 (READ FLOW I.C.)
+0    0    0    0   0   1   0			;B.C.'S (heat TRANSPORT)
+1  61  1    2        0.     -1			;heat flux at bottom W/m2
+ 0    0    0    0   1   0    0			;B.C.'S (mass TRANSPORT)  c1
+ 21  41   1   2       1.00    -1		;C
+ 0    0    0    0   1   0    0			;B.C.'S (mass TRANSPORT) c2 
+ 31  31   1    2       1.00    -1		;C
+1.63 0.30 0.5					;top layer property, k, por, sat
+  -1.5  12.  365. 0. -0.   0.0 0.0		;ix1-ix2,min temp, amplitude, period, phase, cutoff, temp gradient, temp gradient at x-at
+   0.001 0.  365. 0. -0.   0.0 0.0		;min temp, amplitude, period, phase, cutoff, temp gradient, temp gradient at x-Bz
+    0.5  0.  365. 0. -0.   0.0 0.0		;min temp, amplitude, period, phase, cutoff, temp gradient, temp gradient at x-Sat
+0   0.        0.        0.      +1		;IVEL,VX,VY,VZ (m/s),iflipv
+{{{ :disp_long_h }}}  {{{ :disp_long_v }}}  2.0  2.00  {{{ :diff_coefficient }}}  1.0  1.0  0.0  0.0  0.0  0	;ALh,ALv,ATH,ATV,(m) DD(m^2/s),retardc1,retardc2,decayc1,decayc2,agefx,kdisp(=0 original)
+4187. 1000. 2108. 920. 0.58 2.14 0.00E+5   999999.  9999999.  0.0E+0  ;THERMAL PROPS cf,pf, ci,pi tclw,tcli(m,s) , L. HEAT, phi,alpha0,alphap    !!! (phi>>0 to deactivate)
+       0.0 10. 1 2            			;p,q,Ts,Omega,modelWu,modelkr (P36) matrix, no p,q here
+.10 5. 0.0 0.0 1 2            			;p,q,Ts,Omega,modelWu,modelkr (P36) fractures
+    1 61  1 2  1 31   0.0  0.0     -1		;TEMP.I.C.(END WITH -1)
+    1 61  1 2  1 31  1   00.0  00.     +1	;CONC.I.C.(END WITH -1) need component # c1
+    1 61  1 2  1 31  2   00.0  00.     -1	;CONC.I.C.(END WITH -1) need component # c2
+   .001    .005    .001  0.001   10   10            ;CCP,CCT,CCW,CCC !!!,MAXIT1,MAXIT2
+    1.0    1.00      .96			;OVER-RELAX HEADS,TEMP.,TSA
+     0   0   0  0  0				;KNOX(1-5)TRANSV. SECTION
+     1    0   0  0  0				;KNOY(1-5)LONG.  SECTION
+     0    0   0  0  0				;knoz
+100000.  200000.  300000.  400000.  500000.	;five 3d print times (days)
+ 0.   {{{ :sim_duration }}} 50 200   1   9999 9999 -1	;T0,T1,DT,KPLOT(days),kflow,k3dplot,kmom,more
+0.0     1.    0.   1.0				;hinc,rinc,rtdiff,sfact
+0  0   0    0   -999.              -1           ;surface temp patch
+0  0   0    0   0  0   0.   0. 0. -1		;internal heat source, fluxin1 (w/m2),fluxin2(W/m3) decay
+0  0   0   00     -0.00E-04  0. 0.   -1		;SOURCE flow rate per node    see file wells and obs.xlsx C:\Projects\heatflow (total 282.9 m3/d)
