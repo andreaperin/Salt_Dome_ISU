@@ -1,0 +1,11 @@
+[deps]
+Cairo = "159f3aea-2a34-519c-b102-8c37f9878175"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+EnhancedBayesianNetworks = "886a9665-f0d4-4b74-bc12-f95153dc1848"
+Flux = "587475ba-b771-5e3f-ad9e-33799f191a9c"
+JLD2 = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
+MLDataUtils = "cc2ba9b6-d476-5e6d-8eaf-a92d5412d41d"
+MLUtils = "f1d291b0-491e-4a28-83b9-f70985020b54"
+NNlib = "872c559c-99b0-510c-b3b7-b6c96a88d5cd"
+PGFPlotsX = "8314cec4-20b6-5062-9cdb-752b83310925"
+UncertaintyQuantification = "7183a548-a887-11e9-15ce-a56ab60bad7a"
